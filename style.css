@@ -127,8 +127,26 @@ button {
   color: var(--text);
 }
 
+.hero .button-secondary {
+  border-color: rgba(255, 255, 255, 0.48);
+  color: #fff;
+}
+
 .hero {
   padding: 5.5rem 0 4rem;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(14, 39, 26, 0.88) 0%, rgba(14, 39, 26, 0.74) 48%, rgba(14, 39, 26, 0.4) 100%),
+    url("images/woodland.jpg") center 48% / cover;
+}
+
+.hero .eyebrow {
+  color: #d3edbd;
+}
+
+.hero .lead,
+.hero .hero-metrics span {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .hero-grid {
@@ -205,85 +223,26 @@ p {
   min-height: 440px;
   display: grid;
   place-items: center;
+  overflow: visible;
 }
 
-.plant-scene {
-  position: relative;
+.hero-photo {
   width: min(440px, 100%);
   height: 360px;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.78);
   border-radius: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(219,236,214,0.6));
-  border: 1px solid rgba(31, 93, 58, 0.12);
-  box-shadow: 0 30px 60px rgba(42, 83, 55, 0.12);
-}
-
-.plant {
-  position: absolute;
-  bottom: 30px;
-  border-radius: 18px 18px 0 0;
-  background: linear-gradient(180deg, #e3c49e, #b7844a);
-  box-shadow: inset 0 -10px 20px rgba(95, 72, 42, 0.12);
-}
-
-.pot-large {
-  left: 110px;
-  width: 120px;
-  height: 110px;
-}
-
-.pot-medium {
-  left: 220px;
-  width: 90px;
-  height: 100px;
-}
-
-.pot-small {
-  left: 315px;
-  width: 70px;
-  height: 80px;
-}
-
-.leaf {
-  position: absolute;
-  width: 90px;
-  height: 120px;
-  background: linear-gradient(180deg, #7cc77f, #3e8d52);
-  border-radius: 50% 50% 50% 0;
-  transform-origin: bottom center;
-  box-shadow: inset -10px 0 10px rgba(18, 58, 31, 0.12);
-}
-
-.leaf-one {
-  left: 150px;
-  bottom: 120px;
-  transform: rotate(-32deg);
-}
-
-.leaf-two {
-  left: 205px;
-  bottom: 140px;
-  transform: rotate(18deg);
-}
-
-.leaf-three {
-  left: 250px;
-  bottom: 120px;
-  transform: rotate(-10deg);
-}
-
-.leaf-four {
-  left: 315px;
-  bottom: 110px;
-  transform: rotate(24deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
 }
 
 .floating-note {
   position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--border);
+  background: rgba(248, 251, 244, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.76);
   border-radius: 18px;
   padding: 0.8rem 1rem;
   box-shadow: 0 16px 28px rgba(45, 87, 58, 0.08);
+  color: var(--text);
 }
 
 .floating-note span {
@@ -347,29 +306,43 @@ blockquote {
   justify-content: end;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  background-color: #35573a;
+  color: #fff;
 }
 
 .project-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(11, 34, 20, 0.88) 0%, rgba(11, 34, 20, 0.32) 56%, rgba(11, 34, 20, 0.04) 100%);
 }
 
-.project-card > * {
+.project-card > *:not(.project-image) {
   position: relative;
-  z-index: 1;
 }
 
-.accent-one { background: linear-gradient(135deg, rgba(127, 188, 118, 0.28), rgba(255,255,255,0.8)); }
-.accent-two { background: linear-gradient(135deg, rgba(182, 219, 163, 0.2), rgba(255,255,255,0.8)); }
-.accent-three { background: linear-gradient(135deg, rgba(196, 232, 174, 0.25), rgba(255,255,255,0.8)); }
+.project-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
 
 .project-tag {
   display: inline-flex;
   width: fit-content;
   border-radius: 999px;
-  background: rgba(29, 93, 58, 0.08);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   padding: 0.35rem 0.7rem;
   font-size: 0.75rem;
   font-weight: 700;
@@ -387,6 +360,10 @@ blockquote {
 .site-footer p,
 .check-list {
   color: var(--muted);
+}
+
+.project-card p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .split-layout {
