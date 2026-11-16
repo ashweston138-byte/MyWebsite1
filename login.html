@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign in screen prototype for Ash's Nature Guide."
+    />
+    <title>Sign in | Ash's Nature Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="login-page">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Ash's Nature Guide home">
+          Ash's <span>Nature Guide</span>
+        </a>
+        <a class="login-back-link" href="index.html">Back to the nature guide</a>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <p class="eyebrow">Welcome back</p>
+        <h1 id="login-title">Sign in</h1>
+        <p class="login-intro">Sign in to continue exploring with the community.</p>
+
+        <form id="login-form" class="login-form">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            placeholder="Your username"
+            required
+          />
+
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Your password"
+              required
+            />
+            <button
+              id="toggle-password"
+              class="password-toggle"
+              type="button"
+              aria-label="Show password"
+              aria-controls="password"
+              aria-pressed="false"
+            >
+              Show
+            </button>
+          </div>
+
+          <button class="button button-primary login-submit" type="submit">Sign in</button>
+          <p id="login-message" class="login-message" role="status" aria-live="polite">
+            Demo only: signing in is not connected. Your details are not sent or saved.
+          </p>
+        </form>
+
+        <a class="login-home-link" href="index.html">Return to Ash's Nature Guide</a>
+      </section>
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+</html>
