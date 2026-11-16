@@ -880,6 +880,57 @@ blockquote footer {
   }
 }
 
+body:not(.login-page) .button {
+  border-radius: 4px;
+  box-shadow: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body:not(.login-page) .button:hover,
+body:not(.login-page) .button:focus-visible {
+  transform: none;
+  box-shadow: none;
+}
+
+body:not(.login-page) .button-primary {
+  background: var(--primary);
+}
+
+body:not(.login-page) .button-primary:hover,
+body:not(.login-page) .button-primary:focus-visible {
+  background: var(--primary-strong);
+}
+
+body:not(.login-page) .hero-photo,
+body:not(.login-page) .floating-note,
+body:not(.login-page) .project-card,
+body:not(.login-page) .community-panel,
+body:not(.login-page) blockquote {
+  box-shadow: none;
+}
+
+body:not(.login-page) .floating-note,
+body:not(.login-page) .project-card,
+body:not(.login-page) .community-panel,
+body:not(.login-page) blockquote {
+  border-radius: 4px;
+}
+
+body:not(.login-page) .project-card {
+  outline: none;
+  transition: none;
+}
+
+body:not(.login-page) .project-card:hover {
+  transform: none;
+}
+
+body:not(.login-page) .project-card .project-image,
+body:not(.login-page) .project-card:hover .project-image {
+  transform: none;
+  transition: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
