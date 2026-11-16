@@ -373,26 +373,6 @@ blockquote {
   align-items: start;
 }
 
-.about-portrait {
-  width: min(100%, 390px);
-  margin: 2rem auto 0;
-  text-align: center;
-}
-
-.about-portrait img {
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: contrast(1.12);
-}
-
-.about-portrait figcaption {
-  margin-top: 0.35rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-style: italic;
-}
-
 .check-list {
   list-style: none;
   padding: 0;
