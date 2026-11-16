@@ -145,23 +145,6 @@ button {
   color: #fff;
 }
 
-.hero .music-toggle {
-  border-color: rgba(234, 217, 166, 0.65);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.hero .music-toggle:disabled {
-  cursor: not-allowed;
-  opacity: 0.65;
-}
-
-.music-status {
-  min-height: 1.4em;
-  margin: -1.25rem 0 1.5rem;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.85rem;
-}
-
 .hero {
   padding: 7rem 0 5.5rem;
   color: #fff;
