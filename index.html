@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A nature-inspired website for plants, trees, and greener living."
+    />
+    <title>Verdant Valley</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="#top" class="brand" aria-label="Verdant Valley home">Verdant<span>Valley</span></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#collection">Collection</a>
+          <a href="#care">Plant Care</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="button button-primary nav-cta">Shop the greens</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Bring nature home</p>
+            <h1>Grow a life that feels fresh, calm, and alive.</h1>
+            <p class="lead">
+              Discover beautiful plants and trees that transform your space into a peaceful,
+              greener retreat.
+            </p>
+            <div class="hero-actions">
+              <a href="#collection" class="button button-primary">Explore collection</a>
+              <a href="#about" class="button button-secondary">Learn more</a>
+            </div>
+            <ul class="hero-metrics" aria-label="Plant highlights">
+              <li><strong>300+</strong><span>Plant varieties</span></li>
+              <li><strong>100%</strong><span>Natural care</span></li>
+              <li><strong>4.9/5</strong><span>Happy growers</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Plant showcase">
+            <div class="plant-scene">
+              <div class="plant pot-large"></div>
+              <div class="plant pot-medium"></div>
+              <div class="plant pot-small"></div>
+              <div class="leaf leaf-one"></div>
+              <div class="leaf leaf-two"></div>
+              <div class="leaf leaf-three"></div>
+              <div class="leaf leaf-four"></div>
+            </div>
+            <div class="floating-note note-top">
+              <span>Low-maintenance</span>
+              <strong>Easy indoor picks</strong>
+            </div>
+            <div class="floating-note note-bottom">
+              <span>Nature-friendly</span>
+              <strong>Air-purifying plants</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section section-alt">
+        <div class="container split-layout">
+          <div>
+            <p class="eyebrow">Our story</p>
+            <h2>We help people grow greener spaces with confidence.</h2>
+          </div>
+          <div>
+            <p>
+              Verdant Valley brings together botanicals, tree care wisdom, and design inspiration
+              to create healthier homes and calmer living spaces. Every plant we share is chosen
+              for beauty, resilience, and the joy it brings to everyday life.
+            </p>
+            <ul class="check-list">
+              <li>Thoughtfully selected indoor and outdoor plants</li>
+              <li>Simple guidance for planting and care</li>
+              <li>Fresh ideas for greener home living</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="collection" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Featured collection</p>
+            <h2>Plants and trees for every corner of your world.</h2>
+          </div>
+          <div class="work-grid">
+            <article class="project-card accent-one">
+              <div class="project-tag">Indoor</div>
+              <h3>Leafy Favorites</h3>
+              <p>Soft, sculptural greenery that brings calm and freshness to your living spaces.</p>
+            </article>
+            <article class="project-card accent-two">
+              <div class="project-tag">Outdoor</div>
+              <h3>Shade Trees</h3>
+              <p>Strong, graceful trees that provide beauty, shade, and long-term value.</p>
+            </article>
+            <article class="project-card accent-three">
+              <div class="project-tag">Pet Friendly</div>
+              <h3>Safe Picks</h3>
+              <p>Thoughtful options for homes that want color and comfort without worry.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="care" class="section testimonials">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Plant care</p>
+            <h2>Healthy roots start with simple habits.</h2>
+          </div>
+          <div class="quote-grid">
+            <blockquote>
+              “Give your plants gentle light, consistent watering, and room to breathe — nature does the rest.”
+              <footer>— Verdant Valley care guide</footer>
+            </blockquote>
+            <blockquote>
+              “A beautiful home begins with a little greenery, and a little greenery brings a lot of peace.”
+              <footer>— Community favorite</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <a href="#top" class="brand" aria-label="Verdant Valley home">Verdant<span>Valley</span></a>
+          <p>Nature-inspired living for homes, gardens, and greener days.</p>
+        </div>
+        <div class="contact-box">
+          <p class="eyebrow">Let’s grow together</p>
+          <a href="mailto:hello@verdantvalley.example">hello@verdantvalley.example</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> Verdant Valley</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
