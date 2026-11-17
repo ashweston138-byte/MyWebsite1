@@ -115,6 +115,13 @@
               <div class="project-tag">Woodland</div>
               <h3>Trees of the North</h3>
               <p>Get to know the familiar trees that shape local parks, paths and woodlands.</p>
+              <button
+                class="project-card-trigger"
+                type="button"
+                aria-label="Expand Trees of the North photo and write-up"
+                aria-haspopup="dialog"
+                aria-controls="project-dialog"
+              ></button>
             </article>
             <article class="project-card">
               <img
@@ -126,6 +133,13 @@
               <div class="project-tag">Beech tree</div>
               <h3>Beech at Summerseat</h3>
               <p>A mature beech in woodland at Summerseat, Bury, photographed in autumn 2026.</p>
+              <button
+                class="project-card-trigger"
+                type="button"
+                aria-label="Expand Beech at Summerseat photo and write-up"
+                aria-haspopup="dialog"
+                aria-controls="project-dialog"
+              ></button>
             </article>
             <article class="project-card accent-two">
               <img
@@ -137,6 +151,13 @@
               <div class="project-tag">Wildflowers</div>
               <h3>Flowers in the Field</h3>
               <p>Spot common blooms and keep an eye out for less familiar local finds.</p>
+              <button
+                class="project-card-trigger"
+                type="button"
+                aria-label="Expand Flowers in the Field photo and write-up"
+                aria-haspopup="dialog"
+                aria-controls="project-dialog"
+              ></button>
             </article>
             <article class="project-card accent-three">
               <img
@@ -148,8 +169,31 @@
               <div class="project-tag">Woodland plants</div>
               <h3>Leafy Understorey</h3>
               <p>Look closer at the smaller plants that thrive beneath the woodland trees.</p>
+              <button
+                class="project-card-trigger"
+                type="button"
+                aria-label="Expand Leafy Understorey photo and write-up"
+                aria-haspopup="dialog"
+                aria-controls="project-dialog"
+              ></button>
             </article>
           </div>
+          <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-dialog-title">
+            <button
+              id="project-dialog-close"
+              class="project-dialog-close"
+              type="button"
+              aria-label="Close expanded feature"
+            >
+              Close
+            </button>
+            <img id="project-dialog-image" class="project-dialog-image" alt="" />
+            <div class="project-dialog-copy">
+              <p id="project-dialog-tag" class="project-tag"></p>
+              <h3 id="project-dialog-title"></h3>
+              <p id="project-dialog-description"></p>
+            </div>
+          </dialog>
         </div>
       </section>
 

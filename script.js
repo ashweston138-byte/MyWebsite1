@@ -120,6 +120,44 @@ if (navToggle && mainNav) {
   });
 }
 
+const projectDialog = document.querySelector("#project-dialog");
+
+if (projectDialog) {
+  const projectDialogImage = projectDialog.querySelector("#project-dialog-image");
+  const projectDialogTag = projectDialog.querySelector("#project-dialog-tag");
+  const projectDialogTitle = projectDialog.querySelector("#project-dialog-title");
+  const projectDialogDescription = projectDialog.querySelector("#project-dialog-description");
+  const projectDialogClose = projectDialog.querySelector("#project-dialog-close");
+
+  document.querySelectorAll(".project-card").forEach((card) => {
+    const trigger = card.querySelector(".project-card-trigger");
+
+    trigger.addEventListener("click", () => {
+      const image = card.querySelector(".project-image");
+      const tag = card.querySelector(".project-tag");
+      const title = card.querySelector("h3");
+      const description = card.querySelector("p");
+
+      projectDialogImage.src = image.currentSrc || image.src;
+      projectDialogImage.alt = image.alt;
+      projectDialogTag.textContent = tag.textContent;
+      projectDialogTitle.textContent = title.textContent;
+      projectDialogDescription.textContent = description.textContent;
+      projectDialog.showModal();
+    });
+  });
+
+  projectDialogClose.addEventListener("click", () => {
+    projectDialog.close();
+  });
+
+  projectDialog.addEventListener("click", (event) => {
+    if (event.target === projectDialog) {
+      projectDialog.close();
+    }
+  });
+}
+
 const revealItems = document.querySelectorAll(
   ".hero-copy, .hero-visual, .split-layout > *, .section-heading, .project-card, blockquote, .community-panel"
 );
