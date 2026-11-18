@@ -482,6 +482,50 @@ blockquote {
   outline-offset: -10px;
 }
 
+.favorite-toggle {
+  z-index: 2;
+  align-self: flex-start;
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: rgba(25, 43, 32, 0.88);
+  color: #fff;
+  font: 600 0.78rem/1.2 "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.favorite-toggle:hover {
+  background: rgba(25, 43, 32, 1);
+}
+
+.favorite-toggle:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.favorite-toggle:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.favorite-toggle[hidden] {
+  display: none;
+}
+
+.favorites-status {
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
+.favorites-status[data-state="error"] {
+  color: #a12c22;
+}
+
+.favorites-status[data-state="success"] {
+  color: var(--primary-strong);
+}
+
 .project-dialog {
   position: relative;
   width: min(92vw, 900px);
@@ -816,6 +860,8 @@ blockquote footer {
 .login-form input:focus-visible,
 .password-toggle:focus-visible,
 .login-submit:focus-visible,
+.auth-mode-toggle:focus-visible,
+#sign-out:focus-visible,
 .login-back-link:focus-visible,
 .login-home-link:focus-visible {
   outline: 3px solid var(--secondary);
@@ -860,6 +906,44 @@ blockquote footer {
   margin: 0.5rem 0 0;
   color: var(--muted);
   font-size: 0.84rem;
+}
+
+.login-message[data-state="error"] {
+  color: #a12c22;
+}
+
+.login-message[data-state="success"] {
+  color: var(--primary-strong);
+}
+
+.auth-mode-toggle {
+  margin-top: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--primary-strong);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.auth-mode-toggle:hover {
+  color: var(--primary);
+}
+
+.auth-mode-toggle:disabled,
+#sign-out:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.account-panel p {
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
 }
 
 .login-home-link {

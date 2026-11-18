@@ -110,7 +110,7 @@
             <h2>Plants and trees for every corner of your world.</h2>
           </div>
           <div class="work-grid">
-            <article class="project-card accent-one">
+            <article class="project-card accent-one" data-favorite-id="trees-of-the-north">
               <img
                 class="project-image"
                 src="images/tree-canopy.jpg"
@@ -121,6 +121,15 @@
               <h3>Trees of the North</h3>
               <p>Get to know the familiar trees that shape local parks, paths and woodlands.</p>
               <button
+                class="favorite-toggle"
+                type="button"
+                data-favorite-toggle
+                aria-pressed="false"
+                hidden
+              >
+                Save to favorites
+              </button>
+              <button
                 class="project-card-trigger"
                 type="button"
                 aria-label="Expand Trees of the North photo and write-up"
@@ -128,7 +137,7 @@
                 aria-controls="project-dialog"
               ></button>
             </article>
-            <article class="project-card">
+            <article class="project-card" data-favorite-id="beech-at-summerseat">
               <img
                 class="project-image"
                 src="images/beech-summerseat.jpg"
@@ -139,6 +148,15 @@
               <h3>Beech at Summerseat</h3>
               <p>A mature beech in woodland at Summerseat, Bury, photographed in autumn 2026.</p>
               <button
+                class="favorite-toggle"
+                type="button"
+                data-favorite-toggle
+                aria-pressed="false"
+                hidden
+              >
+                Save to favorites
+              </button>
+              <button
                 class="project-card-trigger"
                 type="button"
                 aria-label="Expand Beech at Summerseat photo and write-up"
@@ -146,7 +164,7 @@
                 aria-controls="project-dialog"
               ></button>
             </article>
-            <article class="project-card accent-two">
+            <article class="project-card accent-two" data-favorite-id="flowers-in-the-field">
               <img
                 class="project-image"
                 src="images/wildflowers.jpg"
@@ -157,6 +175,15 @@
               <h3>Flowers in the Field</h3>
               <p>Spot common blooms and keep an eye out for less familiar local finds.</p>
               <button
+                class="favorite-toggle"
+                type="button"
+                data-favorite-toggle
+                aria-pressed="false"
+                hidden
+              >
+                Save to favorites
+              </button>
+              <button
                 class="project-card-trigger"
                 type="button"
                 aria-label="Expand Flowers in the Field photo and write-up"
@@ -164,7 +191,7 @@
                 aria-controls="project-dialog"
               ></button>
             </article>
-            <article class="project-card accent-three">
+            <article class="project-card accent-three" data-favorite-id="leafy-understorey">
               <img
                 class="project-image"
                 src="images/foliage.jpg"
@@ -175,6 +202,15 @@
               <h3>Leafy Understorey</h3>
               <p>Look closer at the smaller plants that thrive beneath the woodland trees.</p>
               <button
+                class="favorite-toggle"
+                type="button"
+                data-favorite-toggle
+                aria-pressed="false"
+                hidden
+              >
+                Save to favorites
+              </button>
+              <button
                 class="project-card-trigger"
                 type="button"
                 aria-label="Expand Leafy Understorey photo and write-up"
@@ -183,6 +219,9 @@
               ></button>
             </article>
           </div>
+          <p id="favorites-status" class="favorites-status" role="status" aria-live="polite">
+            Connecting to your favorites...
+          </p>
           <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-dialog-title">
             <button
               id="project-dialog-close"
@@ -252,7 +291,14 @@
         </div>
         <div class="contact-box">
           <p class="eyebrow">Let’s grow together</p>
-          <a href="mailto:hello@verdantvalley.example">hello@verdantvalley.example</a>
+          <p>
+            Email:
+            <a href="mailto:ashwesto@gmail.com">ashwesto@gmail.com</a>
+          </p>
+          <p>
+            Phone:
+            <a href="tel:01613334455">01613334455</a>
+          </p>
         </div>
       </div>
       <div class="container footer-bottom">
@@ -261,5 +307,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="supabase-config.js"></script>
+    <script type="module" src="favorites.js"></script>
   </body>
 </html>

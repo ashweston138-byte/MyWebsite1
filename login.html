@@ -30,51 +30,84 @@
       <section class="login-card" aria-labelledby="login-title">
         <p class="eyebrow">Welcome back</p>
         <h1 id="login-title">Sign in</h1>
-        <p class="login-intro">Sign in to continue exploring with the community.</p>
+        <p id="login-intro" class="login-intro">
+          Sign in to continue exploring with the community.
+        </p>
 
-        <form id="login-form" class="login-form">
-          <label for="username">Username</label>
-          <input
-            id="username"
-            name="username"
-            type="text"
-            autocomplete="username"
-            placeholder="Your username"
-            required
-          />
-
-          <label for="password">Password</label>
-          <div class="password-field">
+        <div id="auth-form-container">
+          <form id="auth-form" class="login-form">
+            <label for="email">Email</label>
             <input
-              id="password"
-              name="password"
-              type="password"
-              autocomplete="current-password"
-              placeholder="Your password"
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
               required
             />
-            <button
-              id="toggle-password"
-              class="password-toggle"
-              type="button"
-              aria-label="Show password"
-              aria-controls="password"
-              aria-pressed="false"
-            >
-              Show
-            </button>
-          </div>
 
-          <button class="button button-primary login-submit" type="submit">Sign in</button>
-          <p id="login-message" class="login-message" role="status" aria-live="polite">
-            Demo only: signing in is not connected. Your details are not sent or saved.
-          </p>
-        </form>
+            <label for="password">Password</label>
+            <div class="password-field">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Your password"
+                required
+              />
+              <button
+                id="toggle-password"
+                class="password-toggle"
+                type="button"
+                aria-label="Show password"
+                aria-controls="password"
+                aria-pressed="false"
+              >
+                Show
+              </button>
+            </div>
+
+            <button
+              id="auth-submit"
+              class="button button-primary login-submit"
+              type="submit"
+              disabled
+            >
+              Sign in
+            </button>
+          </form>
+          <button
+            id="auth-mode-toggle"
+            class="auth-mode-toggle"
+            type="button"
+            disabled
+          >
+            New here? Create an account
+          </button>
+        </div>
+
+        <section id="account-panel" class="account-panel" aria-live="polite" hidden>
+          <p>You are signed in as <strong id="account-email"></strong>.</p>
+          <button
+            id="sign-out"
+            class="button button-secondary"
+            type="button"
+            disabled
+          >
+            Sign out
+          </button>
+        </section>
+
+        <p id="login-message" class="login-message" role="status" aria-live="polite">
+          Connecting to Supabase Auth...
+        </p>
 
         <a class="login-home-link" href="index.html">Return to Ash's Nature Guide</a>
       </section>
     </main>
 
-    <script src="login.js"></script>
+    <script src="supabase-config.js"></script>
+    <script type="module" src="login.js"></script>
   </body>
 </html>
