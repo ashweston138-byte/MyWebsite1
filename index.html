@@ -241,15 +241,34 @@
         </div>
       </section>
 
-      <section id="community" class="section community-section">
+      <section id="community" class="section community-section" aria-labelledby="community-title">
         <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Nature community</p>
-            <h2>Share what you’ve spotted.</h2>
-            <p class="community-intro">
-              Have a plant question, a local sighting, or a photo from a walk? Join the discussion
-              and learn from other nature lovers.
-            </p>
+          <div class="section-heading community-heading">
+            <div class="community-heading-copy">
+              <p class="eyebrow">Nature community</p>
+              <h2 id="community-title">Good things grow when shared.</h2>
+              <p class="community-intro">
+                Bring a question, a local discovery, or a photo from your latest walk. Meet fellow
+                nature lovers and learn from what everyone finds.
+              </p>
+            </div>
+            <aside class="community-invitation" aria-label="Join the community">
+              <p class="community-invitation-label">Pull up a woodland seat</p>
+              <p>Everyone is welcome. Come say hello and get the conversation growing.</p>
+              <a
+                class="button button-primary"
+                href="https://github.com/ashweston138-byte/MyWebsite1/discussions"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join the conversation <span aria-hidden="true">↗</span>
+              </a>
+            </aside>
+            <ul class="community-prompts" aria-label="Ideas for joining in">
+              <li>Ask a plant question</li>
+              <li>Share a local find</li>
+              <li>Swap nature notes</li>
+            </ul>
           </div>
           <div class="community-panel">
             <p id="community-status" class="community-status" role="status" aria-live="polite">
