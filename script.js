@@ -3,9 +3,36 @@ const mainNav = document.querySelector(".main-nav");
 const yearNode = document.querySelector("#year");
 const communityStatus = document.querySelector("#community-status");
 const giscusContainer = document.querySelector(".giscus");
+const backgroundMusic = document.querySelector("#background-music");
+const backgroundMusicStatus = document.querySelector("#background-music-status");
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
+}
+
+if (backgroundMusic && backgroundMusicStatus) {
+  backgroundMusic.volume = 0.3;
+  backgroundMusic.addEventListener("play", () => {
+    backgroundMusicStatus.textContent = "Background music is playing.";
+  });
+  backgroundMusic.addEventListener("pause", () => {
+    backgroundMusicStatus.textContent = "Background music is paused.";
+  });
+  backgroundMusic.addEventListener("error", () => {
+    console.error("Could not load the background music.");
+    backgroundMusicStatus.textContent = "The background music could not be loaded.";
+  });
+
+  backgroundMusic.play().catch((error) => {
+    if (error.name === "NotAllowedError") {
+      backgroundMusicStatus.textContent =
+        "Your browser blocked autoplay. Press play to start the music.";
+      return;
+    }
+
+    console.error("Could not start the background music:", error);
+    backgroundMusicStatus.textContent = "The background music could not be started.";
+  });
 }
 
 if (communityStatus && giscusContainer) {

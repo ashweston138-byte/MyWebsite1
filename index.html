@@ -400,6 +400,27 @@
       </div>
     </footer>
 
+    <aside class="music-player" aria-label="Background music player">
+      <div class="music-player-copy">
+        <p class="music-player-label">Woodland soundtrack</p>
+        <p class="music-player-title">Shadow of the Moon</p>
+        <p class="music-player-artist">Blackmore's Night</p>
+      </div>
+      <audio
+        id="background-music"
+        controls
+        autoplay
+        loop
+        preload="metadata"
+        aria-label="Background music: Shadow of the Moon by Blackmore's Night"
+      >
+        <source src="audio/shadow-of-the-moon.mp3" type="audio/mpeg" />
+      </audio>
+      <p id="background-music-status" class="music-player-status" role="status" aria-live="polite">
+        Trying to start the music…
+      </p>
+    </aside>
+
     <script src="script.js"></script>
     <script src="supabase-config.js"></script>
     <script type="module" src="favorites.js"></script>

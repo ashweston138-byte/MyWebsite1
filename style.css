@@ -1261,6 +1261,59 @@ blockquote footer {
   color: var(--muted);
 }
 
+.music-player {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 8;
+  width: min(340px, calc(100vw - 2rem));
+  padding: 1rem 1.1rem 0.8rem;
+  border: 1px solid rgba(112, 72, 232, 0.24);
+  border-radius: 20px;
+  background: rgba(255, 253, 247, 0.96);
+  box-shadow: 0 16px 38px rgba(49, 20, 74, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.music-player-copy p {
+  margin: 0;
+}
+
+.music-player-label {
+  color: var(--primary-strong);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.music-player-title {
+  margin-top: 0.15rem !important;
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.music-player-artist {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.music-player audio {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 0.6rem;
+}
+
+.music-player-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
 .nav-toggle {
   display: none;
   width: 44px;
