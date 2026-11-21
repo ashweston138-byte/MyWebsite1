@@ -12,6 +12,8 @@ const loginMessage = document.querySelector("#login-message");
 
 let supabaseClient;
 let isSignUpMode = false;
+const returnToCommunityFinds =
+  new URLSearchParams(window.location.search).get("returnTo") === "community-finds";
 
 const setMessage = (message, type = "info") => {
   loginMessage.textContent = message;
@@ -112,6 +114,11 @@ if (
           "success"
         );
       } else {
+        if (result.data.session && returnToCommunityFinds) {
+          window.location.assign("index.html#community-finds");
+          return;
+        }
+
         renderSession(result.data.session);
         setMessage(
           isSignUpMode ? "Your account is ready." : "You are signed in.",

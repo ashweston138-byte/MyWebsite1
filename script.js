@@ -12,76 +12,40 @@ if (communityStatus && giscusContainer) {
   const repository = "ashweston138-byte/MyWebsite1";
   const discussionUrl = `https://github.com/${repository}/discussions`;
 
-  const showCommunitySetupMessage = (
-    message,
-    linkUrl = discussionUrl,
-    linkLabel = "Visit GitHub Discussions"
-  ) => {
+  const showCommunitySetupMessage = (message) => {
     communityStatus.replaceChildren(document.createTextNode(`${message} `));
     const link = document.createElement("a");
-    link.href = linkUrl;
-    link.textContent = linkLabel;
+    link.href = discussionUrl;
+    link.textContent = "Visit GitHub Discussions";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     communityStatus.append(link);
   };
 
-  fetch(`https://api.github.com/repos/${repository}/discussions/categories`, {
-    headers: { Accept: "application/vnd.github+json" },
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`GitHub Discussions returned ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((categories) => {
-      const generalCategory = categories.find(
-        (category) => category.slug.toLowerCase() === "general"
-      );
-
-      if (!generalCategory) {
-        showCommunitySetupMessage(
-          "The community board needs a GitHub Discussions category named General.",
-          `https://github.com/${repository}/settings`,
-          "Open repository settings"
-        );
-        return;
-      }
-
-      const giscusScript = document.createElement("script");
-      giscusScript.src = "https://giscus.app/client.js";
-      giscusScript.async = true;
-      giscusScript.crossOrigin = "anonymous";
-      giscusScript.dataset.repo = repository;
-      giscusScript.dataset.repoId = "R_kgDOVweGxA";
-      giscusScript.dataset.category = generalCategory.name;
-      giscusScript.dataset.categoryId = generalCategory.node_id;
-      giscusScript.dataset.mapping = "pathname";
-      giscusScript.dataset.strict = "0";
-      giscusScript.dataset.reactionsEnabled = "1";
-      giscusScript.dataset.emitMetadata = "0";
-      giscusScript.dataset.inputPosition = "top";
-      giscusScript.dataset.theme = "light";
-      giscusScript.dataset.lang = "en";
-      giscusScript.addEventListener("load", () => {
-        communityStatus.textContent = "";
-      });
-      giscusScript.addEventListener("error", () => {
-        showCommunitySetupMessage(
-          "The embedded discussion could not load. The discussion board is available directly on GitHub."
-        );
-      });
-      giscusContainer.append(giscusScript);
-    })
-    .catch((error) => {
-      console.error("Could not load the community discussion:", error);
-      showCommunitySetupMessage(
-        "GitHub Discussions is not available yet. Enable it for the repository to start the community board.",
-        `https://github.com/${repository}/settings`,
-        "Open repository settings"
-      );
-    });
+  const giscusScript = document.createElement("script");
+  giscusScript.src = "https://giscus.app/client.js";
+  giscusScript.async = true;
+  giscusScript.crossOrigin = "anonymous";
+  giscusScript.dataset.repo = repository;
+  giscusScript.dataset.repoId = "R_kgDOVweGxA";
+  giscusScript.dataset.category = "Announcements";
+  giscusScript.dataset.categoryId = "DIC_kwDOVweGxM4DLp-u";
+  giscusScript.dataset.mapping = "pathname";
+  giscusScript.dataset.strict = "0";
+  giscusScript.dataset.reactionsEnabled = "1";
+  giscusScript.dataset.emitMetadata = "0";
+  giscusScript.dataset.inputPosition = "top";
+  giscusScript.dataset.theme = "light";
+  giscusScript.dataset.lang = "en";
+  giscusScript.addEventListener("load", () => {
+    communityStatus.textContent = "";
+  });
+  giscusScript.addEventListener("error", () => {
+    showCommunitySetupMessage(
+      "The embedded discussion could not load. You can still read and join the conversation on GitHub."
+    );
+  });
+  giscusContainer.append(giscusScript);
 }
 
 if (navToggle && mainNav) {

@@ -271,13 +271,88 @@
             </ul>
           </div>
           <div class="community-panel">
+            <h3 id="community-panel-title" class="community-panel-title">Join the conversation</h3>
             <p id="community-status" class="community-status" role="status" aria-live="polite">
               Connecting to the community discussion…
             </p>
             <div class="giscus"></div>
             <p class="community-note">
-              Community comments are hosted by GitHub Discussions. You’ll need a GitHub account to post.
+              Comments appear here and are hosted by GitHub Discussions. You’ll need a GitHub account to post.
+              If they don’t load, set up Giscus or browse discussions directly.
+              <a
+                href="https://github.com/ashweston138-byte/MyWebsite1/discussions"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Browse discussions on GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <span aria-hidden="true"> · </span>
+              <a
+                href="https://github.com/apps/giscus/installations/new"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Set up embedded comments <span aria-hidden="true">↗</span>
+              </a>
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="community-finds" class="section community-finds-section" aria-labelledby="community-finds-title">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Field notes from the community</p>
+            <h2 id="community-finds-title">Show us what’s growing.</h2>
+            <p class="community-intro">
+              Share a photo of a plant, tree, or wildlife find from your wanderings. Sign in to
+              add your picture; it will appear in the gallery straight away.
+            </p>
+          </div>
+          <div class="community-finds-layout">
+            <aside id="community-photo-signin" class="photo-upload-card">
+              <p class="photo-upload-eyebrow">Your next discovery</p>
+              <h3>Have a find to share?</h3>
+              <p>Sign in to add a photo to the community gallery.</p>
+              <a class="button button-primary" href="login.html?returnTo=community-finds">
+                Sign in to share
+              </a>
+            </aside>
+            <form id="community-photo-form" class="photo-upload-card" hidden>
+              <p class="photo-upload-eyebrow">Add to the field notes</p>
+              <h3>Share your find</h3>
+              <label for="community-photo-file">Choose a photo</label>
+              <input
+                id="community-photo-file"
+                name="photo"
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/gif"
+                required
+              />
+              <label for="community-photo-caption">What did you spot?</label>
+              <input
+                id="community-photo-caption"
+                name="caption"
+                type="text"
+                maxlength="180"
+                placeholder="e.g. A red admiral in Heaton Park"
+                required
+              />
+              <p class="photo-upload-help">JPG, PNG, WebP or GIF · up to 5 MB</p>
+              <button class="button button-primary" type="submit">Share with the community</button>
+              <p id="community-photo-status" class="photo-upload-status" role="status" aria-live="polite"></p>
+            </form>
+            <div class="community-photo-gallery-wrap">
+              <div id="community-photo-gallery" class="community-photo-gallery" aria-busy="true">
+                <p class="community-photo-empty">Gathering community finds…</p>
+              </div>
+              <p
+                id="community-photo-gallery-status"
+                class="community-photo-gallery-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </div>
           </div>
         </div>
       </section>
@@ -328,5 +403,6 @@
     <script src="script.js"></script>
     <script src="supabase-config.js"></script>
     <script type="module" src="favorites.js"></script>
+    <script type="module" src="community-finds.js"></script>
   </body>
 </html>

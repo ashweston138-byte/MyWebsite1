@@ -21,3 +21,15 @@ The page supports account creation, sign-in, session persistence, and sign-out. 
 3. Sign in on the website. The collection cards will show **Save to favorites** buttons; saved choices persist in the Supabase account.
 
 The favorites table is separate from authentication and does not make the rest of the site private. Never expose a service-role key in browser code.
+
+## Set up community comments and photo finds
+
+The comments panel uses Giscus and the repository's GitHub Discussions **Announcements** category. The repository must be public, Discussions must be enabled, and the Giscus GitHub App must be installed for comments to load and accept posts. Install the app for this repository at <https://github.com/apps/giscus/installations/new>.
+
+The community photo gallery uses the Supabase project above:
+
+1. Open the Supabase project's **SQL Editor**.
+2. Run `supabase-community.sql`. It creates a public gallery for reading and a public Storage bucket for images. Only signed-in users can upload; each uploaded image appears in the gallery immediately.
+3. Visitors can view the gallery without signing in. Photos must be JPG, PNG, WebP, or GIF and no larger than 5 MB. Captions are limited to 180 characters.
+
+Gallery images are publicly readable. The SQL policies restrict uploads to a user's own storage folder and keep account identifiers out of the public photo query. Never put a Supabase service-role or secret key in browser code.

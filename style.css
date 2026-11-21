@@ -813,8 +813,14 @@ blockquote {
   box-shadow: 0 18px 40px rgba(65, 26, 102, 0.12), inset 0 0 0 5px rgba(231, 255, 89, 0.18);
 }
 
+.community-panel-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1;
+}
+
 .community-status {
-  margin: 0;
+  margin: 0 0 0.75rem;
   color: var(--muted);
 }
 
@@ -830,13 +836,191 @@ blockquote {
 }
 
 .giscus {
-  min-height: 120px;
+  min-height: 320px;
 }
 
 .community-note {
   margin: 1.25rem 0 0;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.community-note a {
+  color: #6337cf;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.community-finds-section {
+  background:
+    radial-gradient(ellipse at 92% 18%, rgba(231, 255, 89, 0.26), transparent 25rem),
+    radial-gradient(ellipse at 6% 82%, rgba(112, 72, 232, 0.1), transparent 26rem),
+    linear-gradient(135deg, #fff8e9, #effdf7 55%, #fff0f8);
+}
+
+.community-finds-layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.photo-upload-card {
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+  border: 1px solid rgba(255, 79, 154, 0.26);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 253, 247, 0.98), rgba(228, 255, 245, 0.94));
+  box-shadow: 0 16px 34px rgba(65, 26, 102, 0.12);
+}
+
+.photo-upload-card[hidden] {
+  display: none;
+}
+
+.photo-upload-eyebrow {
+  margin-bottom: 0.55rem;
+  color: var(--primary-strong);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.photo-upload-card h3 {
+  margin-bottom: 0.65rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.photo-upload-card > p:not(.photo-upload-eyebrow):not(.photo-upload-help):not(.photo-upload-status) {
+  color: var(--muted);
+}
+
+#community-photo-form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+#community-photo-form label {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#community-photo-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text);
+  font: inherit;
+}
+
+#community-photo-form input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#community-photo-form input[type="file"] {
+  padding: 0.45rem;
+  font-size: 0.84rem;
+}
+
+#community-photo-form input[type="file"]::file-selector-button {
+  margin-right: 0.7rem;
+  padding: 0.45rem 0.7rem;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(11, 168, 124, 0.14);
+  color: var(--primary-strong);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.photo-upload-help,
+.photo-upload-status,
+.community-photo-gallery-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.photo-upload-status[data-state="error"],
+.community-photo-gallery-status[data-state="error"] {
+  color: #a12c22;
+}
+
+.photo-upload-status[data-state="success"] {
+  color: var(--primary-strong);
+}
+
+.photo-upload-card .button {
+  width: fit-content;
+  margin-top: 0.35rem;
+  cursor: pointer;
+}
+
+.photo-upload-card .button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.community-photo-gallery-wrap {
+  min-width: 0;
+}
+
+.community-photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.community-photo-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(112, 72, 232, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 253, 247, 0.92);
+  box-shadow: 0 10px 24px rgba(65, 26, 102, 0.1);
+}
+
+.community-photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--bg-soft);
+}
+
+.community-photo-card-copy {
+  padding: 0.85rem 1rem 1rem;
+}
+
+.community-photo-card-copy p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.community-photo-card-copy time {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.community-photo-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 2rem;
+  border: 1px dashed rgba(112, 72, 232, 0.34);
+  border-radius: 18px;
+  background: rgba(255, 253, 247, 0.62);
+  color: var(--muted);
+  text-align: center;
 }
 
 .quote-grid {
@@ -1131,6 +1315,10 @@ blockquote footer {
     max-width: 520px;
   }
 
+  .community-finds-layout {
+    grid-template-columns: 1fr;
+  }
+
   .project-dialog[open] {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1216,6 +1404,10 @@ blockquote footer {
 
   .hero-metrics {
     gap: 1rem 2rem;
+  }
+
+  .community-photo-gallery {
+    grid-template-columns: 1fr;
   }
 
   .footer-wrap {
